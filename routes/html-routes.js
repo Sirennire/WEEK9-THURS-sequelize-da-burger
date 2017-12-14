@@ -14,7 +14,7 @@ module.exports = function(app) {
         //console.log(hbsObject);
         res.render("index", hbsObject);
         // We have access to the todos as an argument inside of the callback function
-  
+      
       });
     // res.render("index")
   });
