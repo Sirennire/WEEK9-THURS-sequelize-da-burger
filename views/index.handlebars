@@ -1,0 +1,123 @@
+<style>
+  body {
+    background-color: #f4a83c;
+    color: brown;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  #false {
+    color: #2f9624;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  #true {
+    color:#2f9624;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  #clearburger {
+    background-color: #e8553e;
+  }
+  h1 {
+    color: yellow;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  .yellow {
+    text-decoration: underline;
+    color: yellow;
+    text-shadow: 5px;
+  }
+  .none {
+    text-decoration: none;
+  }
+  h5 {
+    font-style: italic;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  h4 {
+    color: black;
+  }
+  .delburger {
+    color: white;
+  }
+  #grey {
+    color: #706262;
+  }
+</style>
+
+<div class="main-container">
+
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1>Eat Da Burger</h1>
+      <br>
+
+    </div><!--col-->
+  </div><!--row-->
+
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <img src="assets/images/burger.png" alt="Burger" height="150px">
+      <br>
+      <h4 class="yellow"><a href="https://youtu.be/2FqumoQpkhk" target="_blank">(DA?)</a></h4>
+    </div><!--col-->
+  </div><!--row-->
+
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h5>-- We hasn't tried Hobbitses before. Is it soft? Is it juicy?" --</h5>
+    </div><!--col-->
+  </div><!--row-->
+
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <form id="createburger" class="button-size">
+      <p><textarea rows="2" cols="40" type="text" name="burger"></textarea></p>
+      <p><button class="saveburger btn-success btn-lg" type="submit">Add a new burger!</button></p>
+      </form>
+    </div><!--col-->
+  </div><!--row-->
+  <br>
+
+  <div class="row">
+    <div class="col-xs-1"></div><!--col-->
+    <div id="false" class="col-xs-4 text-center">
+      <ul class="list-group">
+        {{#each burgers}}
+          {{#if this.devoured}}
+          {{else}}
+        <li class="list-group-item">
+          <h4>
+            {{this.burger_name    }}
+            <button id="none" data-burgerid="{{this.id}}" class="delburger btn-xs btn-success">we ates the precious!</button>
+            </h4>
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div><!--col-->
+
+<div class="col-xs-2"></div><!--col-->
+
+    <div id="true" class="col-xs-4 text-center">
+      <ul class="list-group">
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <li class="list-group-item">
+              <h4 id="grey">
+                {{this.burger_name}}
+              </h4>
+            </li>
+          {{/if}}
+        {{/each}}
+        <br>
+        <button id="clearburger" class="button btn-danger btn-lg" type="submit">My preciouses are lost!</button>
+      </ul>
+    </div><!--col-->
+    <div class="col-xs-1"></div><!--col-->
+  </div><!--row-->
+
+</div><!--main-comtainer-->
